@@ -1,0 +1,170 @@
+/* Reset & Pengaturan Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+/* Canvas Latar Belakang */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+/* Tombol Kontrol Musik */
+.music-btn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+.music-btn:hover {
+  transform: scale(1.15);
+}
+.music-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #a0a0a0;
+  transition: fill 0.3s ease, filter 0.3s ease;
+}
+.icon-speaker-on {
+  display: none;
+}
+.music-btn.playing .icon-speaker-on {
+  display: block;
+  fill: #d4af37;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
+}
+.music-btn.playing .icon-speaker-off {
+  display: none;
+}
+/* Kontainer Utama */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Judul & Subtitel */
+.main-title,
+.subtitle {
+  transition: transform 0.4s ease-out, color 0.4s ease-out,
+    text-shadow 0.4s ease-out;
+  cursor: pointer;
+}
+
+.main-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 7vw, 4rem); /* Sedikit disesuaikan untuk 2 baris */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  line-height: 1.2; /* Menambah jarak antar baris */
+}
+
+/* [BARU] Aturan untuk membuat "ABDITAMA" pindah ke baris baru */
+.title-break {
+  display: block; /* Membuat elemen ini menjadi block-level (pindah baris) */
+  margin-top: 0.2em; /* Memberi sedikit jarak dari baris di atasnya */
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 400;
+  color: #a0a0a0;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.text-active {
+  transform: scale(1.05);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 25px rgba(212, 175, 55, 0.4);
+}
+/* Tombol Masuk yang Menarik */
+.enter-btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 15px 40px;
+  color: #d4af37;
+  background: transparent;
+  border: 2px solid #d4af37;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0), 0 0 10px rgba(212, 175, 55, 0);
+  text-decoration: none;
+  display: inline-block;
+}
+.enter-btn span {
+  position: relative;
+  z-index: 1;
+}
+.enter-btn:hover {
+  color: #0a0a0a;
+  background-color: #d4af37;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 40px rgba(212, 175, 55, 0.5);
+}
+.enter-btn:active {
+  transform: translateY(0) scale(1);
+}
+/* Container & Ikon Sosial Media */
+.social-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 5rem;
+}
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.social-links a:hover {
+  transform: scale(1.2) translateY(-5px);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
+}
+.social-links svg {
+  width: 28px;
+  height: 28px;
+  fill: #a0a0a0;
+  transition: fill 0.3s ease;
+}
+.social-links a:hover svg {
+  fill: #d4af37;
+}
